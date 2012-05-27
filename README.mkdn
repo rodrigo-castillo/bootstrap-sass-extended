@@ -1,0 +1,21 @@
+Bootstrap-Sass-Extended
+=======================
+
+This is an extension for bootstrap-sass with a few extra mixins and a fix for relative assets like glyphicons. I've decided not upstream because not everyone uses relative assets. Requires bootstrap-sass https://github.com/thomas-mcdonald/bootstrap-sass
+
+Requires that relative assets is true
+
+Mixins
+======
+
+'''btn'''
+creates a btn-$name class so you can easily make buttons beyond the standard primary, info, etc types
+
+	@include btn($name, $background, $backgroundHighlight, $color);
+	
+'''text-shadow'''
+Applies text-shadow styling (with appropriate vendor prefixes). Has a standard of the values shown
+	
+	.text {
+		@include text-shadow(0px -1px 0px #333);
+	}

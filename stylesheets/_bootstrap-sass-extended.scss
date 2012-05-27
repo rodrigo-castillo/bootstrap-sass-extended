@@ -1,0 +1,27 @@
+// This is your framework's main stylesheet. Use it to import all default modules.
+@import "bootstrap/mixins";
+@import "bootstrap/variables";
+
+// fix the default sprite path
+$iconSpritePath: image-url("glyphicons-halflings.png");
+$iconWhiteSpritePath: image-url("glyphicons-halflings-white.png");
+
+@mixin btn($name, $background, $backgroundHighlight, $color: $white) {
+	.btn-#{$name}, .btn-#{$name}:hover {
+		color: $color;
+  		text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+	}
+	.btn-#{$name}.active {
+		color: rgba(255,255,255,.75);
+	}
+	
+	.btn-#{$name} {
+  		@include buttonBackground($background, $backgroundHighlight);
+	}
+}
+
+@mixin text-shadow($shadow: 0px -1px 0px #333) {
+  -webkit-text-shadow: $shadow;
+     -moz-text-shadow: $shadow;
+          text-shadow: $shadow;
+}
